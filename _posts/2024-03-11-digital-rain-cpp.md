@@ -7,7 +7,7 @@ categories: demo
 
 ## Introduction
 
-Digital Rain is a visual effect that mimics a stream of falling raindrops on a computer screen. The effect was first popularised by its use in "The Matrix" and has since been adopted in various contexts. It was originally depicted as layers of green Unicode characters with a white head that faded as they fell down the screen.</br>
+Digital Rain is a visual effect that mimics a stream of falling raindrops on a computer screen. The effect was first popularised by its use in "The Matrix" and has since been adopted in various contexts. It was originally depicted as layers of green Unicode characters with a white head that faded as they fell down the screen.[^1]
 In this blog I will explore my approach to this challenge, my implementation using features of modern C++, and the problems I encountered along the way.
 
 ## Design & Test
