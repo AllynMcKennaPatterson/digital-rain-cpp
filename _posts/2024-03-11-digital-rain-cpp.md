@@ -4,6 +4,7 @@ title: A Digital Rain Project in Modern C++
 tags: cpp coding project
 categories: demo
 ---
+<img src="https://raw.githubusercontent.com/allynmckennapatterson/digital-rain-cpp/main/docs/assets/images/Header.png" width="800" height="200">
 
 ## Introduction
 
