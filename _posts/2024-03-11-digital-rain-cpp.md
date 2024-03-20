@@ -36,7 +36,7 @@ Console output is typically written horizontally, whereas Digital Rain requires 
 Digital Rain with random characters is much more interesting than a single character. I have used C++'s ```default_random_engine``` from the ```<random>``` library. ```default_random_engine``` is a modern C++ feature and is generally considered better than C's ```rand``` function due to its higher quality random number generation.
 
 #### Performance Optimisation
-The efficiency of the algorithm will determine how smooth the Digital Rain appears. The printing algorithm may need to loop through, and print 200 characters per "frame". Even a 1ms delay each loop could result in a huge performance drop. This was the biggest challenge I encountered and I will expand on 
+The efficiency of the algorithm will determine how smooth the Digital Rain appears. My printing algorithm may need to loop through, and print 200 characters per "frame". Even a 500μs delay when printing each character could result in a noticable performance drop. This was the biggest challenge I encountered and I will expand on the performance issues later in the problem solving section.
 
 ## Algorithm
 
