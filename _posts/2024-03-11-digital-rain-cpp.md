@@ -4,8 +4,9 @@ title: A Digital Rain Project in Modern C++
 tags: cpp coding project
 categories: demo
 ---
-
+<div align="center">
 <img src="https://raw.githubusercontent.com/allynmckennapatterson/digital-rain-cpp/main/docs/assets/images/Blog_Header.png" width="800" height="200">
+</div>
 
 ## Introduction
 
@@ -19,7 +20,9 @@ In this blog I will explore my approach to this challenge, my implementation usi
 ### Project Structure
 My project features three classes.
 
+<div align="center">
 <img src="https://raw.githubusercontent.com/allynmckennapatterson/digital-rain-cpp/main/docs/assets/images/UML Diagram.png" width="500" height="200">
+</div>
 
 - The DigitalRain class is responsible for creating RainDrop objects, adding them to a vector, and calling the print method on each RainDrop. 
 
@@ -43,12 +46,30 @@ The efficiency of the algorithm will determine how smooth the Digital Rain appea
 ### My Approach
 I considered a number of approaches when I began planning this project. I could choose to use mulithreading, asynchronous tasks, or even treat the console window as a large 2D array. Instead I chose to focus on the core logic of the simulation without adding overhead such as thread coordination and synchronisation.
 
-I have split my algorithm into two sections. My object management occurs in the outer loop and is responsible for managing my ```RainDrop``` objects
+I have split my algorithm into two sections. My object management occurs in the outer loop and is responsible for managing my ```RainDrop``` objects. My printing algorithm is called on each ```RainDrop``` object at the end of the Object Management loop.
 
 ### Object Management
+###### Flow Chart
+<div align="center">
+<img src="https://raw.githubusercontent.com/allynmckennapatterson/digital-rain-cpp/main/docs/assets/images/Object_Management.png" width="500" height="600">
+</div>
 
+Each ```RainDrop``` object is intialised with a random ```length``` and ```X``` coordinate. 
+
+I have designed my such that only three hundred raindrop object will exist at one time, this provides good character density while only increasing my process memory usage by 100KB.
+
+###### Visual Studio Diagnostic Tools
+<div align="center">
+<img src="https://raw.githubusercontent.com/allynmckennapatterson/digital-rain-cpp/main/docs/assets/images/Performance_Stats.png" width="437" height="201">
+</div>
 
 ### Printing Algorithm
+###### Flow Chart
+<div align="center">
+<img src="https://raw.githubusercontent.com/allynmckennapatterson/digital-rain-cpp/main/docs/assets/images/Print_Flowchart.png" width="500" height="800">
+</div>
+
+My printing algorithm loops through each character in 
 
 ## Problem Solving
 
