@@ -116,9 +116,4 @@ I did not encounter many problems while working on this project. Instead I will 
 I would not change my approach. I still believe that threading is unnecessary and would increase the Process Memory of the program for marginal performance gains. I don't believe threading would fix my performance issues either since rendering the rain is not a computationally intensive task and I would still need to print each character using ```cout```. Instead I would utilise the Windows API library, specifically the ```WriteConsoleOutput``` function to write directly to the console buffer. This would remove the abstracted function calls and synchronisation that occurs when ```cout``` is executed.
 
 
-
-
-
-
-
 ## Modern C++
