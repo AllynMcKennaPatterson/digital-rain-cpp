@@ -88,16 +88,21 @@ I needed a way to measure the performance so I implemented a frames-per-second (
 #### Test Case 3
 
 ### Conclusion: Cout is slow
-Now that I have tested a version with multiple colours, with a single colour, and with no colour, I suspect that my performance issues lie with ```cout```. Since there can be approximately 150 raindrops on the screen at one time, each with 4-12 characters, cout can be called 600-1800 times per frame. I wrote a small program to measure the time taken to execute ```cout``` with a single coloured character. 
+Now that I have tested a version with multiple colours, with a single colour, and with no colour, I suspect that my performance issues lie with ```cout```. Since there can be approximately 150 raindrops on the screen at one time, each with 4-12 characters, cout can be called 600-1800 times per frame. I wrote a small program to measure the time taken to execute ```cout``` with a single character. 
 
 ##### Results
 <div align="center">
+Execution time of a single character without colour
 <img src="https://raw.githubusercontent.com/allynmckennapatterson/digital-rain-cpp/main/docs/assets/images/cout_no_colour.png">
 </div>
+
 <div align="center">
+Shortest recorded execution time of a single character with colour
 <img src="https://raw.githubusercontent.com/allynmckennapatterson/digital-rain-cpp/main/docs/assets/images/cout_colour_short.png">
 </div>
+
 <div align="center">
+Longest recorded execution time of a single character with colour
 <img src="https://raw.githubusercontent.com/allynmckennapatterson/digital-rain-cpp/main/docs/assets/images/cout_long.png">
 </div>
 
@@ -106,6 +111,13 @@ After seeing these results I am confident that ```cout``` is the root of my perf
 The variable length in execution is likely due to the internal synchronisation mechanisms that make ```cout``` thread safe.
 
 ## Problem Solving
+I did not encounter many problems while working on this project. Instead I will talk about how I would fix the existing problems if I could start again.
+
+I would not change my approach. I still believe that threading is unnecessary and would increase the Process Memory of the program for marginal performance gains. I don't believe threading would fix my performance issues either since rendering the rain is not a computationally intensive task and I would still need to print each character using ```cout```. Instead I would utilise the Windows API library, specifically the ```WriteConsoleOutput``` function to write directly to the console buffer. This would remove the abstracted function calls and synchronisation that occurs when ```cout``` is executed.
+
+
+
+
 
 
 
