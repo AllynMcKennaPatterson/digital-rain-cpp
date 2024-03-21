@@ -62,6 +62,7 @@ I have designed my algorithm such that only three hundred raindrop object will e
 <div align="center">
 <img src="https://raw.githubusercontent.com/allynmckennapatterson/digital-rain-cpp/main/docs/assets/images/Performance_Stats.png" width="437" height="201">
 </div>
+<br/>
 
 ### Printing Algorithm
 ###### Flow Chart
@@ -104,7 +105,8 @@ Shortest recorded execution time of a single character with colour
 <div align="center">
 Longest recorded execution time of a single character with colour
 <img src="https://raw.githubusercontent.com/allynmckennapatterson/digital-rain-cpp/main/docs/assets/images/cout_long.png">
-</div>
+</div> 
+<br/>
 
 After seeing these results I am confident that ```cout``` is the root of my performance issues. The high-level abstraction that ```cout``` provides creates additional overhead in the form of function calls and parameter passing compared to writing directly to the buffer using Windows API function. It also seems that printing the character wrapped in an ANSI colour code significantly increases the execution time.
 
