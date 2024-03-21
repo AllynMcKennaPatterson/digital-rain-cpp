@@ -73,9 +73,13 @@ My printing algorithm loops through and prints each character in a ```RainDrop``
 
 I have excluded a set of ```if/else``` statements that determine the character's colour for simplicity.
 
+## Performance
+
+Performance was one of my main concerns while working on this project.
+
 ## Problem Solving
 
-### Performance
+
 
 
 ## Modern C++
