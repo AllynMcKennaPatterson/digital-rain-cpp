@@ -69,7 +69,9 @@ I have designed my such that only three hundred raindrop object will exist at on
 <img src="https://raw.githubusercontent.com/allynmckennapatterson/digital-rain-cpp/main/docs/assets/images/Print_Flowchart.png" width="500" height="800">
 </div>
 
-My printing algorithm loops through each character in 
+My printing algorithm loops through and prints each character in a ```RainDrop```'s ```chars``` vector before incrementing the ```Y``` coordinate. I made the decision to add characters to the drop each loop to create a smooth falling effect as the drop enters the screen. When the drop reaches the bottom of the screen I begin to pop characters from the vector so it can exit the screen. 
+
+I have excluded a set of ```if/else``` statements that determine the character's colour for simplicity.
 
 ## Problem Solving
 
