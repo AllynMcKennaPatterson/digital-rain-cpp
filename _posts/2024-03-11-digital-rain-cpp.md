@@ -40,6 +40,19 @@ The efficiency of the algorithm will determine how smooth the Digital Rain appea
 
 ## Algorithm
 
+### My Approach
+I considered a number of approaches when I began planning this project. I could choose to use mulithreading, asynchronous tasks, or even treat the console window as a large 2D array. Instead I chose to focus on the core logic of the simulation without adding overhead such as thread coordination and synchronisation.
+
+I have split my algorithm into two sections. My object management occurs in the outer loop and is responsible for managing my ```RainDrop``` objects
+
+### Object Management
+
+
+### Printing Algorithm
+
 ## Problem Solving
+
+### Performance
+
 
 ## Modern C++
