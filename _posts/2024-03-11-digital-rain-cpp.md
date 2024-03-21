@@ -39,7 +39,7 @@ Console output is typically written horizontally, whereas Digital Rain requires 
 Digital Rain with random characters is much more interesting than a single character. I have used C++'s ```default_random_engine``` from the ```<random>``` library. ```default_random_engine``` is a modern C++ feature and is generally considered better than C's ```rand``` function due to its higher quality random number generation.
 
 #### Performance Optimisation
-The efficiency of the algorithm will determine how smooth the Digital Rain appears. My printing algorithm may need to loop through, and print 200 characters per "frame". Even a 500μs delay when printing each character could result in a noticable performance drop. This was the biggest challenge I encountered and I will expand on the performance issues later in the problem solving section.
+The efficiency of the algorithm will determine how smooth the Digital Rain appears. My printing algorithm may need to loop through, and print 200 characters per "frame". Even a 500μs delay when printing each character could result in a noticable performance drop. This was the biggest challenge I encountered and I will expand on the performance issues later in the Performance section.
 
 ## Algorithm
 
@@ -56,7 +56,7 @@ I have split my algorithm into two sections. My object management occurs in the 
 
 Each ```RainDrop``` object is intialised with a random ```length``` and ```X``` coordinate. 
 
-I have designed my such that only three hundred raindrop object will exist at one time, this provides good character density while only increasing my process memory usage by 100KB.
+I have designed my algorithm such that only three hundred raindrop object will exist at one time, this provides good character density while only increasing my process memory usage by 100KB.
 
 ###### Visual Studio Diagnostic Tools
 <div align="center">
@@ -75,11 +75,31 @@ I have excluded a set of ```if/else``` statements that determine the character's
 
 ## Performance
 
-Performance was one of my main concerns while working on this project.
+Performance was one of my main concerns while working on this project. My goal was to find a good balance between an efficient algorithm and impressive visuals. In my earlier versions of the project I only created a maximum of 150 ```RainDrop``` objects, which resulted in a smooth output but a scattered display. I then doubled the maximum ```RainDrop``` count without any noticable performance drops. It was only when I introduced colours that I noticed a significant reduction in framerate, which lead me to investigate why.
+
+### Performance Testing
+
+I needed a way to measure the performance so I implemented a frames-per-second (FPS) monitor by measuring the time between each console window update (period). The frequency of console window updates could then be calculated as 1/period. Setting the ```Sleep``` period to 16ms between prints would result in approximately 60Hz if we assume the character are instantly displayed, however this is far from the case.
+
+#### Test Case 1
+
+#### Test Case 2
+
+#### Test Case 3
+
+### Conclusion: Cout is slow
+Now that I have tested a version with multiple colours, with a single colour, and with no colour, I suspect that my performance issues lie with ```cout```. Since there can be approximately 150 raindrops on the screen at one time, each with 4-12 characters, cout can be called 600-1800 times per frame. I wrote a small program to measure the time taken to execute ```cout``` with a single coloured character. 
+
+##### Results
+<div align="center">
+<img src="https://raw.githubusercontent.com/allynmckennapatterson/digital-rain-cpp/main/docs/assets/images/cout_short.png">
+</div>
+<div align="center">
+<img src="https://raw.githubusercontent.com/allynmckennapatterson/digital-rain-cpp/main/docs/assets/images/cout_long.png">
+</div>
+
+After seeing these results I am confident that ```cout``` is the root of my performance issues. The high-level abstraction that ```cout``` provides creates additional overhead in the form of function calls and parameter passing compared to writing directly to the buffer using Windows API function. The variable length in execution is likely due to the internal synchronisation mechanisms that make ```cout``` thread safe.
 
 ## Problem Solving
-
-
-
 
 ## Modern C++
