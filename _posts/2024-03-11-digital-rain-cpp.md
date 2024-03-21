@@ -39,7 +39,7 @@ Console output is typically written horizontally, whereas Digital Rain requires 
 Digital Rain with random characters is much more interesting than a single character. I have used C++'s ```default_random_engine``` from the ```<random>``` library. ```default_random_engine``` is a modern C++ feature and is generally considered better than C's ```rand``` function due to its higher quality random number generation.
 
 #### Performance Optimisation
-The efficiency of the algorithm will determine how smooth the Digital Rain appears. My printing algorithm may need to loop through, and print 200 characters per "frame". Even a 500μs delay when printing each character could result in a noticable performance drop. This was the biggest challenge I encountered and I will expand on the performance issues later in the Performance section.
+The efficiency of the algorithm will determine how smooth the Digital Rain appears. My printing algorithm may need to loop through, and print 400-1800 characters per "frame". Any small delay while printing each character could result in a noticable performance drop. This was the biggest challenge I encountered and I will expand on the performance issues later in the Performance section.
 
 ## Algorithm
 
@@ -92,14 +92,21 @@ Now that I have tested a version with multiple colours, with a single colour, an
 
 ##### Results
 <div align="center">
-<img src="https://raw.githubusercontent.com/allynmckennapatterson/digital-rain-cpp/main/docs/assets/images/cout_short.png">
+<img src="https://raw.githubusercontent.com/allynmckennapatterson/digital-rain-cpp/main/docs/assets/images/cout_no_colour.png">
+</div>
+<div align="center">
+<img src="https://raw.githubusercontent.com/allynmckennapatterson/digital-rain-cpp/main/docs/assets/images/cout_colour_short.png">
 </div>
 <div align="center">
 <img src="https://raw.githubusercontent.com/allynmckennapatterson/digital-rain-cpp/main/docs/assets/images/cout_long.png">
 </div>
 
-After seeing these results I am confident that ```cout``` is the root of my performance issues. The high-level abstraction that ```cout``` provides creates additional overhead in the form of function calls and parameter passing compared to writing directly to the buffer using Windows API function. The variable length in execution is likely due to the internal synchronisation mechanisms that make ```cout``` thread safe.
+After seeing these results I am confident that ```cout``` is the root of my performance issues. The high-level abstraction that ```cout``` provides creates additional overhead in the form of function calls and parameter passing compared to writing directly to the buffer using Windows API function. It also seems that printing the character wrapped in an ANSI colour code significantly increases the execution time.
+
+The variable length in execution is likely due to the internal synchronisation mechanisms that make ```cout``` thread safe.
 
 ## Problem Solving
+
+
 
 ## Modern C++
