@@ -6,7 +6,7 @@ categories: demo
 ---
 
 <div align="center">
-<video src="https://github.com/AllynMcKennaPatterson/digital-rain-cpp/assets/115079449/b6111ee5-ac23-4b4c-a7bb-4806b04f9ccb" data-canonical-src="https://github.com/AllynMcKennaPatterson/digital-rain-cpp/assets/115079449/b6111ee5-ac23-4b4c-a7bb-4806b04f9ccb" autoplay="autoplay" loop="loop" muted="muted" class="d-block rounded-bottom-2 width-fit" style="max-width:700px;">
+<video src="https://github.com/AllynMcKennaPatterson/digital-rain-cpp/assets/115079449/b6111ee5-ac23-4b4c-a7bb-4806b04f9ccb" data-canonical-src="https://github.com/AllynMcKennaPatterson/digital-rain-cpp/assets/115079449/b6111ee5-ac23-4b4c-a7bb-4806b04f9ccb" autoplay="autoplay" loop="loop" muted="muted" class="d-block rounded-bottom-2 width-fit" style="max-width:750px;">
 </video>
 </div>
 
@@ -67,7 +67,8 @@ Each ```RainDrop``` object is intialised with a random ```length``` and ```X``` 
 
 I have designed my algorithm such that only three hundred raindrop object will exist at one time, this provides good character density while only increasing my process memory usage by 100KB.
 
-###### Visual Studio Diagnostic Tools
+<br/>
+
 <div align="center">
 <img src="https://raw.githubusercontent.com/allynmckennapatterson/digital-rain-cpp/main/docs/assets/images/Performance_Stats.png" width="437" height="201">
 </div>
@@ -131,20 +132,28 @@ Now that I have tested a version with multiple colours, with a single colour, an
 
 ##### Results
 <div align="center">
-Execution time of a single character without colour
 <img src="https://raw.githubusercontent.com/allynmckennapatterson/digital-rain-cpp/main/docs/assets/images/cout_no_colour.png">
 </div>
+<div align="center">
+<em><small>Fig.4.1 Execution time of a single character without colour</small></em>
+</div>
+<br/>
 
 <div align="center">
-Shortest recorded execution time of a single character with colour
 <img src="https://raw.githubusercontent.com/allynmckennapatterson/digital-rain-cpp/main/docs/assets/images/cout_colour_short.png">
 </div>
+<div align="center">
+<em><small>Fig.4.2 Shortest recorded execution time of a single character with colour</small></em>
+</div>
+<br/>
 
 <div align="center">
-Longest recorded execution time of a single character with colour
 <img src="https://raw.githubusercontent.com/allynmckennapatterson/digital-rain-cpp/main/docs/assets/images/cout_long.png">
 </div> 
-
+<div align="center">
+<em><small>Fig.4.3 Longest recorded execution time of a single character with colour</small></em>
+</div>
+<br/>
 <br/>
 
 After seeing these results I am confident that ```cout``` is the root of my performance issues. The high-level abstraction that ```cout``` provides creates additional overhead in the form of function calls and parameter passing compared to writing directly to the buffer using Windows API function. It also seems that printing the character wrapped in an ANSI colour code significantly increases the execution time.
