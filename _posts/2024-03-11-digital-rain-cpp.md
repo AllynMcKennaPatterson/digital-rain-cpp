@@ -110,7 +110,7 @@ I needed a way to measure the performance so I implemented a frames-per-second (
 </video>
 </div>
 
-### Conclusion: Cout is slow
+### Conclusion: Cout is slow and ANSI colour escape codes are even slower
 Now that I have tested a version with multiple colours, with a single colour, and with no colour, I suspect that my performance issues lie with ```cout```. Since there can be approximately 150 raindrops on the screen at one time, each with 4-12 characters, cout can be called 600-1800 times per frame. I wrote a small program to measure the time taken to execute ```cout``` with a single character. 
 
 ##### Results
@@ -128,6 +128,7 @@ Shortest recorded execution time of a single character with colour
 Longest recorded execution time of a single character with colour
 <img src="https://raw.githubusercontent.com/allynmckennapatterson/digital-rain-cpp/main/docs/assets/images/cout_long.png">
 </div> 
+
 <br/>
 
 After seeing these results I am confident that ```cout``` is the root of my performance issues. The high-level abstraction that ```cout``` provides creates additional overhead in the form of function calls and parameter passing compared to writing directly to the buffer using Windows API function. It also seems that printing the character wrapped in an ANSI colour code significantly increases the execution time.
