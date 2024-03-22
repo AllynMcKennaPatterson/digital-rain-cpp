@@ -4,8 +4,10 @@ title: A Digital Rain Project in Modern C++
 tags: cpp coding project
 categories: demo
 ---
+
 <div align="center">
-<img src="https://raw.githubusercontent.com/allynmckennapatterson/digital-rain-cpp/main/docs/assets/images/Blog_Header.png" width="800" height="200">
+<video src="https://github.com/AllynMcKennaPatterson/digital-rain-cpp/assets/115079449/795b345f-543a-4d24-9ce3-44e36dec167f" data-canonical-src="https://github.com/AllynMcKennaPatterson/digital-rain-cpp/assets/115079449/795b345f-543a-4d24-9ce3-44e36dec167f" autoplay="autoplay" loop="loop" muted="muted" class="d-block rounded-bottom-2 width-fit" style="max-height:500px;">
+</video>
 </div>
 
 ## Introduction
