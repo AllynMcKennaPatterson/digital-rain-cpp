@@ -6,7 +6,7 @@ categories: demo
 ---
 
 <div align="center">
-<video src="https://github.com/AllynMcKennaPatterson/digital-rain-cpp/assets/115079449/b6111ee5-ac23-4b4c-a7bb-4806b04f9ccb" data-canonical-src="https://github.com/AllynMcKennaPatterson/digital-rain-cpp/assets/115079449/b6111ee5-ac23-4b4c-a7bb-4806b04f9ccb" autoplay="autoplay" loop="loop" muted="muted" class="d-block rounded-bottom-2 width-fit" style="max-width:750px;">
+<video src="https://github.com/AllynMcKennaPatterson/digital-rain-cpp/assets/115079449/b6111ee5-ac23-4b4c-a7bb-4806b04f9ccb" data-canonical-src="https://github.com/AllynMcKennaPatterson/digital-rain-cpp/assets/115079449/b6111ee5-ac23-4b4c-a7bb-4806b04f9ccb" autoplay="autoplay" loop="loop" muted="muted" class="d-block rounded-bottom-2 width-fit" style="max-width:700px;">
 </video>
 </div>
 
@@ -58,6 +58,10 @@ I have split my algorithm into two sections. My object management occurs in the 
 <div align="center">
 <img src="https://raw.githubusercontent.com/allynmckennapatterson/digital-rain-cpp/main/docs/assets/images/Object_Management.png" width="500" height="600">
 </div>
+<div align="center">
+<em><small>Fig.2.1 Object Management flowchart</small></em>
+</div>
+<br></br>
 
 Each ```RainDrop``` object is intialised with a random ```length``` and ```X``` coordinate. 
 
@@ -67,6 +71,9 @@ I have designed my algorithm such that only three hundred raindrop object will e
 <div align="center">
 <img src="https://raw.githubusercontent.com/allynmckennapatterson/digital-rain-cpp/main/docs/assets/images/Performance_Stats.png" width="437" height="201">
 </div>
+<div align="center">
+<em><small>Fig.2.2 Visual Studio Diagnostic Tools</small></em>
+</div>
 <br/>
 
 ### Printing Algorithm
@@ -74,6 +81,10 @@ I have designed my algorithm such that only three hundred raindrop object will e
 <div align="center">
 <img src="https://raw.githubusercontent.com/allynmckennapatterson/digital-rain-cpp/main/docs/assets/images/Print_Flowchart.png" width="500" height="800">
 </div>
+<div align="center">
+<em><small>Fig.2.3 Printing Algorithm Flowchart</small></em>
+</div>
+<br/>
 
 My printing algorithm loops through and prints each character in a ```RainDrop```'s ```chars``` vector before incrementing the ```Y``` coordinate. I made the decision to add characters to the drop each loop to create a smooth falling effect as the drop enters the screen. When the drop reaches the bottom of the screen I begin to pop characters from the vector so it can exit the screen. 
 
@@ -111,7 +122,7 @@ I needed a way to measure the performance so I implemented a frames-per-second (
 #### Test Case 4
 
 <div align="center">
-<video src="https://github.com/AllynMcKennaPatterson/digital-rain-cpp/assets/115079449/06dadd37-d3fb-45ee-9529-dd82de2e7975" data-canonical-src="https://github.com/AllynMcKennaPatterson/digital-rain-cpp/assets/115079449/06dadd37-d3fb-45ee-9529-dd82de2e7975" autoplay="autoplay" loop="loop" muted="muted" class="d-block rounded-bottom-2 width-fit" style="max-width:400px;">
+<video src="https://github.com/AllynMcKennaPatterson/digital-rain-cpp/assets/115079449/06dadd37-d3fb-45ee-9529-dd82de2e7975" data-canonical-src="https://github.com/AllynMcKennaPatterson/digital-rain-cpp/assets/115079449/06dadd37-d3fb-45ee-9529-dd82de2e7975" autoplay="autoplay" loop="loop" muted="muted" class="d-block rounded-bottom-2 width-fit" style="max-height:400px;">
 </video>
 </div>
 
