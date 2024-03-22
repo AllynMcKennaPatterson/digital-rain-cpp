@@ -6,7 +6,7 @@ categories: demo
 ---
 
 <div align="center">
-<video src="https://github.com/AllynMcKennaPatterson/digital-rain-cpp/assets/115079449/e848bcd4-3f1d-4a78-893a-210d818d3147" data-canonical-src="https://github.com/AllynMcKennaPatterson/digital-rain-cpp/assets/115079449/e848bcd4-3f1d-4a78-893a-210d818d3147" autoplay="autoplay" loop="loop" muted="muted" class="d-block rounded-bottom-2 width-fit" style="max-width:745px;">
+<video src="https://github.com/AllynMcKennaPatterson/digital-rain-cpp/assets/115079449/e848bcd4-3f1d-4a78-893a-210d818d3147" data-canonical-src="https://github.com/AllynMcKennaPatterson/digital-rain-cpp/assets/115079449/e848bcd4-3f1d-4a78-893a-210d818d3147" autoplay="autoplay" loop="loop" muted="muted" class="d-block rounded-bottom-2 width-fit" style="max-width:740px;">
 </video>
 </div>
 
@@ -28,6 +28,7 @@ My project features three classes.
 <div align="center">
 <em><small>Fig.1.1 Project UML Diagram</small></em>
 </div>
+<br/>
 
 - The DigitalRain class is responsible for creating ```RainDrop``` objects, adding them to a vector, and calling the print method on each ```RainDrop```. 
 
@@ -133,7 +134,9 @@ Performance was one of my main concerns while working on this project. My goal w
 
 ### Performance Testing
 
-I needed a way to measure the performance so I implemented a frames-per-second (FPS) monitor by measuring the time between each console window update (period). The frequency of console window updates could then be calculated as 1/period. Setting the ```Sleep``` period to 16ms between prints would result in approximately 60Hz if we assume the character are instantly displayed, however this is far from the case.
+I needed a way to measure the performance so I implemented a frames-per-second (fps) monitor by measuring the time between each console window update (period). The frequency of console window updates could then be calculated as 1/period. Setting the ```Sleep``` period to 16ms between prints would result in approximately 60Hz if we assume the character are instantly displayed, however this is far from the case.
+
+In the following tests the object count and fps monitor can be seen at the bottom of the window.
 
 #### Test Case 1
 
@@ -200,12 +203,12 @@ Now that I have tested a version with no colour, with a single colour, and with 
 <br/>
 <br/>
 
-After seeing these results I am confident that ```cout``` is the root of my performance issues. The high-level abstraction that ```cout``` provides creates execution delays in the form of function calls and parameter passing compared to writing directly to the buffer using Windows API function. It also seems that printing the character wrapped in an ANSI colour code significantly increases the execution time.
+After seeing these results I am confident that ```cout``` is the root of my performance issues. The high-level abstraction that ```cout``` provides creates execution delays in the form of function calls and parameter passing. This is much slower when compared to writing directly to the buffer using Windows API functions. It also seems that printing the character wrapped in an ANSI colour code significantly increases the execution time.
 
 The variable length in execution time is likely due to the internal synchronisation mechanisms that make ```cout``` thread safe.
 
 ## Problem Solving
-I did not get a chance to fix the performance issues so I instead offered the user a "performance mode" in the colour select menu. Performance mode prints plain characters without ANSI colour escape code which can double the frequency of screen updates, however it will never come close to the 60Hz that I aspired to reach.
+I did not get a chance to fix the performance issues so I instead offered the user a "performance mode" in the colour select menu. Performance mode prints plain characters without ANSI colour escape codes which can double the frequency of screen updates, however it will never come close to the 60Hz that I aspired to reach.
 
 If I could start this project again I would not change my simple approach. I still believe that threading is unnecessary and would significantly increase the Process Memory of the program for marginal performance gains. I don't believe threading would fix my performance issues either since rendering the rain is not a computationally intensive task and I would still be bottlenecked by ```cout```. Instead I would utilise the Windows API library, specifically the ```WriteConsoleOutput``` function to write directly to the console buffer. This would remove the abstracted function calls and synchronisation that occurs when ```cout``` is executed.
 
