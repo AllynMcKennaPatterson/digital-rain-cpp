@@ -29,16 +29,16 @@ My project features three classes.
 <em><small>Fig.1.1 Project UML Diagram</small></em>
 </div>
 
-- The DigitalRain class is responsible for creating RainDrop objects, adding them to a vector, and calling the print method on each RainDrop. 
+- The DigitalRain class is responsible for creating ```RainDrop``` objects, adding them to a vector, and calling the print method on each ```RainDrop```. 
 
-- A RainDrop object holds the data for each individual drop and will print them one character at a time when the DigitalRain class instructs it to do so.
+- A ```RainDrop``` object holds the data for each drop and will print them one character at a time when the DigitalRain class instructs it to do so.
 
-- A StartMenu object is created when the project starts. I designed this class to add some customisation to my project. The user can select the set of characters and colour they wish to be printed.
+- A ```StartMenu``` object is created when the project starts. I designed this class to add some customisation to my project. The user can select the set of characters and colour they wish to be printed.
 
 ### Design Challenges
 
 #### Character Animation
-Console output is typically written horizontally, whereas Digital Rain requires the output to be written vertically. The easiest option here was to use the WinAPI's ```SetConsoleCursorPosition``` method which allows me to set the X and Y coordinate of the cursor and print a character anywhere in the console window. In this case creating the falling animation is as simple as incrementing the Y coordinate each time a character is printed. 
+Console output is typically written horizontally, whereas Digital Rain requires the output to be written vertically. The easiest option here was to use the Windows API ```SetConsoleCursorPosition``` function which allows me to set the X and Y coordinate of the cursor and print a character anywhere in the console window. In this case creating the falling animation is as simple as incrementing the Y coordinate each time a character is printed. 
 
 #### Generating Random Characters
 Digital Rain with random characters is much more interesting than a single character. I have used C++'s ```default_random_engine``` from the ```<random>``` library. ```default_random_engine``` is a modern C++ feature and is generally considered better than C's ```rand``` function due to its higher quality random number generation.
@@ -61,7 +61,7 @@ I have split my algorithm into two sections. My object management occurs in the 
 <div align="center">
 <em><small>Fig.2.1 Object Management flowchart</small></em>
 </div>
-<br></br>
+<br/>
 
 Each ```RainDrop``` object is intialised with a random ```length``` and ```X``` coordinate. 
 
@@ -127,7 +127,7 @@ I needed a way to measure the performance so I implemented a frames-per-second (
 </video>
 </div>
 
-### Conclusion: Cout is slow and ANSI colour escape codes are even slower
+### Cout is slow and ANSI colour escape codes are even slower
 Now that I have tested a version with multiple colours, with a single colour, and with no colour, I suspect that my performance issues lie with ```cout```. Since there can be approximately 150 raindrops on the screen at one time, each with 4-12 characters, cout can be called 600-1800 times per frame. I wrote a small program to measure the time taken to execute ```cout``` with a single character. 
 
 ##### Results
