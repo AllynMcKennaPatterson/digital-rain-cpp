@@ -24,6 +24,7 @@ My project features three classes.
 <img src="https://raw.githubusercontent.com/allynmckennapatterson/digital-rain-cpp/main/docs/assets/images/UML Diagram.png" width="500" height="200">
 
 <em><small>Fig.2.1 My notebook experimenting with different logic</small></em>
+
 </div>
 
 - The DigitalRain class is responsible for creating RainDrop objects, adding them to a vector, and calling the print method on each RainDrop. 
@@ -140,7 +141,7 @@ The variable length in execution is likely due to the internal synchronisation m
 ## Problem Solving
 I did not get a chance to fix the performance issues so I instead offered the user a "performance mode" in the colour select menu. Performance mode prints plain characters without ANSI colour escape code which can double the frequency of screen updates.
 
-If I could start this project again I would not change my approach. I still believe that threading is unnecessary and would increase the Process Memory of the program signigicantly for marginal performance gains. I don't believe threading would fix my performance issues either since rendering the rain is not a computationally intensive task and I would still need to print each character using ```cout```. Instead I would utilise the Windows API library, specifically the ```WriteConsoleOutput``` function to write directly to the console buffer. This would remove the abstracted function calls and synchronisation that occurs when ```cout``` is executed.
+If I could start this project again I would not change my approach. I still believe that threading is unnecessary and would increase the Process Memory of the program signigicantly for marginal performance gains. I don't believe threading would fix my performance issues either since rendering the rain is not a computationally intensive task and I would still be bottlenecked by ```cout```. Instead I would utilise the Windows API library, specifically the ```WriteConsoleOutput``` function to write directly to the console buffer. This would remove the abstracted function calls and synchronisation that occurs when ```cout``` is executed.
 
 I would also implement double buffering using the ```SetConsoleActiveScreenBuffer``` function from the Windows API. Double buffering would enable me to write characters to a second off-screen buffer. Once all changes are ready, I would switch buffers which would prevent me from updating the screen on each character update.
 ## Modern C++
