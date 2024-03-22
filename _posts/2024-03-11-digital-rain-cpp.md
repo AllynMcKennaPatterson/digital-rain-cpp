@@ -57,10 +57,17 @@ I have split my algorithm into two sections. My object management occurs in the 
 ### Object Management
 ###### Flow Chart
 <div align="center">
+<img src="https://raw.githubusercontent.com/allynmckennapatterson/digital-rain-cpp/main/docs/assets/images/ObjectManagement.png" width="600" height="550">
+</div>
+<div align="center">
+<em><small>Fig.2.1 Object Management code</small></em>
+</div>
+<br/>
+<div align="center">
 <img src="https://raw.githubusercontent.com/allynmckennapatterson/digital-rain-cpp/main/docs/assets/images/Object_Management.png" width="500" height="600">
 </div>
 <div align="center">
-<em><small>Fig.2.1 Object Management flowchart</small></em>
+<em><small>Fig.2.2 Object Management flowchart</small></em>
 </div>
 <br/>
 
@@ -74,17 +81,24 @@ I have designed my algorithm such that only three hundred raindrop object will e
 <img src="https://raw.githubusercontent.com/allynmckennapatterson/digital-rain-cpp/main/docs/assets/images/Performance_Stats.png" width="437" height="201">
 </div>
 <div align="center">
-<em><small>Fig.2.2 Visual Studio Diagnostic Tools</small></em>
+<em><small>Fig.2.3 Visual Studio Diagnostic Tools</small></em>
 </div>
 <br/>
 
 ### Printing Algorithm
 ###### Flow Chart
 <div align="center">
+<img src="https://raw.githubusercontent.com/allynmckennapatterson/digital-rain-cpp/main/docs/assets/images/PrintLoop.png" width="700" height="600">
+</div>
+<div align="center">
+<em><small>Fig.2.4 Object Management code</small></em>
+</div>
+<br/>
+<div align="center">
 <img src="https://raw.githubusercontent.com/allynmckennapatterson/digital-rain-cpp/main/docs/assets/images/Print_Flowchart.png" width="500" height="800">
 </div>
 <div align="center">
-<em><small>Fig.2.3 Printing Algorithm Flowchart</small></em>
+<em><small>Fig.2.5 Printing Algorithm Flowchart</small></em>
 </div>
 <br/>
 
