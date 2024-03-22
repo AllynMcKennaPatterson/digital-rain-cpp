@@ -106,12 +106,16 @@ I needed a way to measure the performance so I implemented a frames-per-second (
 </video>
 </div>
 
+In this scenario I printed plain characters to the screen without ANSI colour escape codes. This is the most performant test case and typically runs at 16fps.
+
 #### Test Case 2
 
 <div align="center">
 <video src="https://github.com/AllynMcKennaPatterson/digital-rain-cpp/assets/115079449/df17cc27-8f53-428b-8f9d-fb222c39d3e8" data-canonical-src="https://github.com/AllynMcKennaPatterson/digital-rain-cpp/assets/115079449/df17cc27-8f53-428b-8f9d-fb222c39d3e8" autoplay="autoplay" loop="loop" muted="muted" class="d-block rounded-bottom-2 width-fit" style="max-height:400px;">
 </video>
 </div>
+
+This scenario contains four colours. A character gets printed in white, grey, blue, or dark blue depending on its position in the vector. This test case is significantly slower and runs at 5-7fps.
 
 #### Test Case 3
 
@@ -120,6 +124,8 @@ I needed a way to measure the performance so I implemented a frames-per-second (
 </video>
 </div>
 
+I wanted to ensure that the set of ```if/else``` statement that determine a character's colour wasn't the source of the problem. In this scenario I removed the ```if/else``` statements and printed every character with the same ANSI colour escape code. Removing the ```if/else``` statements had no noticable effect on the performance.
+
 #### Test Case 4
 
 <div align="center">
@@ -127,8 +133,10 @@ I needed a way to measure the performance so I implemented a frames-per-second (
 </video>
 </div>
 
+Finally I wanted to see what would happen if I set colour once in main and printed each character without an ANSI colour escape code. I used ```<stdlib.h>```'s ```system``` function to set the colour. This scenario performed just as well as test case 1.
+
 ### Cout is slow and ANSI colour escape codes are even slower
-Now that I have tested a version with multiple colours, with a single colour, and with no colour, I suspect that my performance issues lie with ```cout```. Since there can be approximately 150 raindrops on the screen at one time, each with 4-12 characters, cout can be called 600-1800 times per frame. I wrote a small program to measure the time taken to execute ```cout``` with a single character. 
+Now that I have tested a version with no colour, with a single colour, and with multiple colours, I suspect that my performance issues lie with ```cout``` and ANSI colour escape codes. Since there can be approximately 150 raindrops on the screen at one time, each with 4-12 characters, ```cout``` can be called 600-1800 times per frame. I wrote a small program to measure the time taken to execute ```cout``` with a single character. 
 
 ##### Results
 <div align="center">
@@ -163,7 +171,8 @@ The variable length in execution time is likely due to the internal synchronisat
 ## Problem Solving
 I did not get a chance to fix the performance issues so I instead offered the user a "performance mode" in the colour select menu. Performance mode prints plain characters without ANSI colour escape code which can double the frequency of screen updates, however it will never come close to the 60Hz that I aspired to reach.
 
-If I could start this project again I would not change my approach. I still believe that threading is unnecessary and would increase the Process Memory of the program signigicantly for marginal performance gains. I don't believe threading would fix my performance issues either since rendering the rain is not a computationally intensive task and I would still be bottlenecked by ```cout```. Instead I would utilise the Windows API library, specifically the ```WriteConsoleOutput``` function to write directly to the console buffer. This would remove the abstracted function calls and synchronisation that occurs when ```cout``` is executed.
+If I could start this project again I would not change my approach. I still believe that threading is unnecessary and would significantly increase the Process Memory of the program for marginal performance gains. I don't believe threading would fix my performance issues either since rendering the rain is not a computationally intensive task and I would still be bottlenecked by ```cout```. Instead I would utilise the Windows API library, specifically the ```WriteConsoleOutput``` function to write directly to the console buffer. This would remove the abstracted function calls and synchronisation that occurs when ```cout``` is executed.
 
 I would also implement double buffering using the ```SetConsoleActiveScreenBuffer``` function from the Windows API. Double buffering would enable me to write characters to a second off-screen buffer. Once all changes are ready, I would switch buffers which would prevent me from updating the screen on each character update.
+
 ## Modern C++
