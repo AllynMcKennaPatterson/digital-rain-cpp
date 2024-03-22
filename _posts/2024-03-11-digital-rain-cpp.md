@@ -84,19 +84,25 @@ I needed a way to measure the performance so I implemented a frames-per-second (
 
 #### Test Case 1
 
-https://github.com/AllynMcKennaPatterson/digital-rain-cpp/assets/115079449/e61101f4-d895-40a5-a955-5c9093493be6
+<video src="https://github.com/AllynMcKennaPatterson/digital-rain-cpp/assets/115079449/e61101f4-d895-40a5-a955-5c9093493be6" data-canonical-src="https://github.com/AllynMcKennaPatterson/digital-rain-cpp/assets/115079449/e61101f4-d895-40a5-a955-5c9093493be6" controls="controls" muted="muted" class="d-block rounded-bottom-2 width-fit" style="max-height:500px;">
+</video>
+
 
 #### Test Case 2
 
-https://github.com/AllynMcKennaPatterson/digital-rain-cpp/assets/115079449/df17cc27-8f53-428b-8f9d-fb222c39d3e8
+<video src="https://github.com/AllynMcKennaPatterson/digital-rain-cpp/assets/115079449/df17cc27-8f53-428b-8f9d-fb222c39d3e8" data-canonical-src="https://github.com/AllynMcKennaPatterson/digital-rain-cpp/assets/115079449/df17cc27-8f53-428b-8f9d-fb222c39d3e8" controls="controls" muted="muted" class="d-block rounded-bottom-2 width-fit" style="max-height:500px;">
+</video>
+
 
 #### Test Case 3
 
-https://github.com/AllynMcKennaPatterson/digital-rain-cpp/assets/115079449/aeb18d2c-abb0-46f9-b377-88857e58d95b
+<video src="https://github.com/AllynMcKennaPatterson/digital-rain-cpp/assets/115079449/aeb18d2c-abb0-46f9-b377-88857e58d95b" data-canonical-src="https://github.com/AllynMcKennaPatterson/digital-rain-cpp/assets/115079449/aeb18d2c-abb0-46f9-b377-88857e58d95b" controls="controls" muted="muted" class="d-block rounded-bottom-2 width-fit" style="max-height:500px;">
+</video>
 
 #### Test Case 4
 
-https://github.com/AllynMcKennaPatterson/digital-rain-cpp/assets/115079449/06dadd37-d3fb-45ee-9529-dd82de2e7975
+<video src="https://github.com/AllynMcKennaPatterson/digital-rain-cpp/assets/115079449/06dadd37-d3fb-45ee-9529-dd82de2e7975" data-canonical-src="https://github.com/AllynMcKennaPatterson/digital-rain-cpp/assets/115079449/06dadd37-d3fb-45ee-9529-dd82de2e7975" controls="controls" muted="muted" class="d-block rounded-bottom-2 width-fit" style="max-height:500px;">
+</video>
 
 ### Conclusion: Cout is slow
 Now that I have tested a version with multiple colours, with a single colour, and with no colour, I suspect that my performance issues lie with ```cout```. Since there can be approximately 150 raindrops on the screen at one time, each with 4-12 characters, cout can be called 600-1800 times per frame. I wrote a small program to measure the time taken to execute ```cout``` with a single character. 
