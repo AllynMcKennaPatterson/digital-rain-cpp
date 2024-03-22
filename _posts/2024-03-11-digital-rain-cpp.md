@@ -91,6 +91,42 @@ My printing algorithm loops through and prints each character in a ```RainDrop``
 
 I have excluded a set of ```if/else``` statements that determine the character's colour for simplicity.
 
+## Modern C++
+
+I had the opportunity to use some features of modern C++ throughout this project. 
+
+### Vectors
+At the heart of my project lies ```std::vector```. With vectors I could dynamically add and remove characters from my raindrops with ease.
+
+<div align="center">
+<img src="https://raw.githubusercontent.com/allynmckennapatterson/digital-rain-cpp/main/docs/assets/images/Vector.png" width="600" height="210">
+</div>
+<div align="center">
+<em><small>Fig.3.1 Dynamically adding elements to a vector</small></em>
+</div>
+<br/>
+
+### Initialiser Lists
+I leveraged initialiser lists in my constructors to enhance readability and maintainability of my code.
+<div align="center">
+<img src="https://raw.githubusercontent.com/allynmckennapatterson/digital-rain-cpp/main/docs/assets/images/InitList.png" width="600" height="210">
+</div>
+<div align="center">
+<em><small>Fig.3.2 Initialiser List used in all args constructor</small></em>
+</div>
+<br/>
+
+### Range Based For Loops
+Range based for loops enhanced my code readability, provided clarity, and improved safety by preventing off by one errors.
+
+<div align="center">
+<img src="https://raw.githubusercontent.com/allynmckennapatterson/digital-rain-cpp/main/docs/assets/images/ForLoop.png" width="600" height="210">
+</div>
+<div align="center">
+<em><small>Fig.3.3 Range based for loop</small></em>
+</div>
+<br/>
+
 ## Performance
 
 Performance was one of my main concerns while working on this project. My goal was to find a good balance between an efficient algorithm and impressive visuals. In my earlier versions of the project I only created a maximum of 150 ```RainDrop``` objects, which resulted in a smooth output but a scattered display. I then doubled the maximum ```RainDrop``` count without any noticable performance drops. It was only when I introduced colours that I noticed a significant reduction in framerate, which lead me to investigate why.
@@ -124,7 +160,7 @@ This scenario contains four colours. A character gets printed in white, grey, bl
 </video>
 </div>
 
-I wanted to ensure that the set of ```if/else``` statement that determine a character's colour wasn't the source of the problem. In this scenario I removed the ```if/else``` statements and printed every character with the same ANSI colour escape code. Removing the ```if/else``` statements had no noticable effect on the performance.
+I wanted to ensure that the set of ```if/else``` statements that determine a character's colour wasn't the source of the problem. In this scenario I removed the ```if/else``` statements and printed every character with the same ANSI colour escape code. Removing the ```if/else``` statements had no noticable effect on the performance and this scenario ran just as slow as test case 2.
 
 #### Test Case 4
 
@@ -171,8 +207,7 @@ The variable length in execution time is likely due to the internal synchronisat
 ## Problem Solving
 I did not get a chance to fix the performance issues so I instead offered the user a "performance mode" in the colour select menu. Performance mode prints plain characters without ANSI colour escape code which can double the frequency of screen updates, however it will never come close to the 60Hz that I aspired to reach.
 
-If I could start this project again I would not change my approach. I still believe that threading is unnecessary and would significantly increase the Process Memory of the program for marginal performance gains. I don't believe threading would fix my performance issues either since rendering the rain is not a computationally intensive task and I would still be bottlenecked by ```cout```. Instead I would utilise the Windows API library, specifically the ```WriteConsoleOutput``` function to write directly to the console buffer. This would remove the abstracted function calls and synchronisation that occurs when ```cout``` is executed.
+If I could start this project again I would not change my simple approach. I still believe that threading is unnecessary and would significantly increase the Process Memory of the program for marginal performance gains. I don't believe threading would fix my performance issues either since rendering the rain is not a computationally intensive task and I would still be bottlenecked by ```cout```. Instead I would utilise the Windows API library, specifically the ```WriteConsoleOutput``` function to write directly to the console buffer. This would remove the abstracted function calls and synchronisation that occurs when ```cout``` is executed.
 
 I would also implement double buffering using the ```SetConsoleActiveScreenBuffer``` function from the Windows API. Double buffering would enable me to write characters to a second off-screen buffer. Once all changes are ready, I would switch buffers which would prevent me from updating the screen on each character update.
 
-## Modern C++
