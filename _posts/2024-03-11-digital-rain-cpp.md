@@ -6,7 +6,7 @@ categories: demo
 ---
 
 <div align="center">
-<video src="https://github.com/AllynMcKennaPatterson/digital-rain-cpp/assets/115079449/795b345f-543a-4d24-9ce3-44e36dec167f" data-canonical-src="https://github.com/AllynMcKennaPatterson/digital-rain-cpp/assets/115079449/795b345f-543a-4d24-9ce3-44e36dec167f" autoplay="autoplay" loop="loop" muted="muted" class="d-block rounded-bottom-2 width-fit" style="max-height:500px;">
+<video src="https://github.com/AllynMcKennaPatterson/digital-rain-cpp/assets/115079449/795b345f-543a-4d24-9ce3-44e36dec167f" data-canonical-src="https://github.com/AllynMcKennaPatterson/digital-rain-cpp/assets/115079449/795b345f-543a-4d24-9ce3-44e36dec167f" autoplay="autoplay" loop="loop" muted="muted" class="d-block rounded-bottom-2 width-fit" style="max-width:800px;">
 </video>
 </div>
 
@@ -111,7 +111,7 @@ I needed a way to measure the performance so I implemented a frames-per-second (
 #### Test Case 4
 
 <div align="center">
-<video src="https://github.com/AllynMcKennaPatterson/digital-rain-cpp/assets/115079449/06dadd37-d3fb-45ee-9529-dd82de2e7975" data-canonical-src="https://github.com/AllynMcKennaPatterson/digital-rain-cpp/assets/115079449/06dadd37-d3fb-45ee-9529-dd82de2e7975" autoplay="autoplay" loop="loop" muted="muted" class="d-block rounded-bottom-2 width-fit" style="max-height:400px;">
+<video src="https://github.com/AllynMcKennaPatterson/digital-rain-cpp/assets/115079449/06dadd37-d3fb-45ee-9529-dd82de2e7975" data-canonical-src="https://github.com/AllynMcKennaPatterson/digital-rain-cpp/assets/115079449/06dadd37-d3fb-45ee-9529-dd82de2e7975" autoplay="autoplay" loop="loop" muted="muted" class="d-block rounded-bottom-2 width-fit" style="max-width:400px;">
 </video>
 </div>
 
