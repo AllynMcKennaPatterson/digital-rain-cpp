@@ -6,7 +6,7 @@ categories: demo
 ---
 
 <div align="center">
-<video src="https://github.com/AllynMcKennaPatterson/digital-rain-cpp/assets/115079449/795b345f-543a-4d24-9ce3-44e36dec167f" data-canonical-src="https://github.com/AllynMcKennaPatterson/digital-rain-cpp/assets/115079449/795b345f-543a-4d24-9ce3-44e36dec167f" autoplay="autoplay" loop="loop" muted="muted" class="d-block rounded-bottom-2 width-fit" style="max-width:800px;">
+<video src="https://github.com/AllynMcKennaPatterson/digital-rain-cpp/assets/115079449/b6111ee5-ac23-4b4c-a7bb-4806b04f9ccb" data-canonical-src="https://github.com/AllynMcKennaPatterson/digital-rain-cpp/assets/115079449/b6111ee5-ac23-4b4c-a7bb-4806b04f9ccb" autoplay="autoplay" loop="loop" muted="muted" class="d-block rounded-bottom-2 width-fit" style="max-width:750px;">
 </video>
 </div>
 
