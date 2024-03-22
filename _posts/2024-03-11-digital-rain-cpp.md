@@ -24,9 +24,9 @@ My project features three classes.
 
 <div align="center">
 <img src="https://raw.githubusercontent.com/allynmckennapatterson/digital-rain-cpp/main/docs/assets/images/UML Diagram.png" width="500" height="200">
-
-<em><small>Fig.2.1 My notebook experimenting with different logic</small></em>
-
+</div>
+<div align="center">
+<em><small>Fig.1.1 Project UML Diagram</small></em>
 </div>
 
 - The DigitalRain class is responsible for creating RainDrop objects, adding them to a vector, and calling the print method on each RainDrop. 
