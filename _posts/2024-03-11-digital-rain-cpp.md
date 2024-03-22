@@ -84,6 +84,12 @@ I needed a way to measure the performance so I implemented a frames-per-second (
 
 #### Test Case 1
 
+
+https://github.com/AllynMcKennaPatterson/digital-rain-cpp/assets/115079449/e61101f4-d895-40a5-a955-5c9093493be6
+
+
+
+
 #### Test Case 2
 
 #### Test Case 3
