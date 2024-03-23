@@ -55,7 +55,6 @@ I considered a number of approaches when I began planning this project. I could'
 I have split my algorithm into two sections. My object management occurs in the outer loop and is responsible for managing my ```RainDrop``` objects. My printing algorithm is called on each ```RainDrop``` object at the end of the Object Management loop.
 
 ### Object Management
-###### Flow Chart
 <div align="center">
 <img src="https://raw.githubusercontent.com/allynmckennapatterson/digital-rain-cpp/main/docs/assets/images/ObjectManagement.png" width="600" height="550">
 </div>
@@ -86,7 +85,6 @@ I have designed my algorithm such that only three hundred raindrop object will e
 <br/>
 
 ### Printing Algorithm
-###### Flow Chart
 <div align="center">
 <img src="https://raw.githubusercontent.com/allynmckennapatterson/digital-rain-cpp/main/docs/assets/images/PrintLoop.png" width="700" height="600">
 </div>
