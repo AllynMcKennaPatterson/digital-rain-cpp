@@ -89,7 +89,7 @@ I have designed my algorithm such that only three hundred raindrop object will e
 <img src="https://raw.githubusercontent.com/allynmckennapatterson/digital-rain-cpp/main/docs/assets/images/PrintLoop.png" width="700" height="600">
 </div>
 <div align="center">
-<em><small>Fig.2.4 Object Management code</small></em>
+<em><small>Fig.2.4 Printing Algorithm code</small></em>
 </div>
 <br/>
 <div align="center">
